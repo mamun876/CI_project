@@ -44,7 +44,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                   
+
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Tables</h1>
@@ -57,9 +57,9 @@
                             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
                         </div>
                         <div class="card-body">
-                        <?php if(session()->getFlashdata("msg")):?>
-                            <div class="table-responsive">
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">  <?php echo session()->getFlashdata('msg'); ?>
+                            <?php if (session()->getFlashdata("msg")) : ?>
+                                <div class="table-responsive">
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert"> <?php echo session()->getFlashdata('msg'); ?>
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     </div>
                                 <?php endif; ?>
@@ -72,34 +72,44 @@
                                             <th>Price</th>
                                             <th>SKU</th>
                                             <th>Model</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                             <th>ID</th>
+                                            <th>ID</th>
                                             <th>Product Name</th>
                                             <th>Category</th>
                                             <th>Price</th>
                                             <th>SKU</th>
                                             <th>Model</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php 
-                                        foreach($items as $item):
+                                        <?php
+                                        foreach ($items as $item) :
                                         ?>
-                                        <tr>
-                                            <td><?php echo $item['product_id']?></td>
-                                            <td><?php echo $item['product']?></td>
-                                            <td><?php echo $item['category']?></td>
-                                            <td><?php echo $item['price']?></td>
-                                            <td><?php echo $item['sku']?></td>
-                                            <td><?php echo $item['model']?></td>
-                                        </tr>
+                                            <tr>
+                                                <td><?php echo $item['product_id'] ?></td>
+                                                <td><?php echo $item['product'] ?></td>
+                                                <td><?php echo $item['category'] ?></td>
+                                                <td><?php echo $item['price'] ?></td>
+                                                <td><?php echo $item['sku'] ?></td>
+                                                <td><?php echo $item['model'] ?></td>
+                                                <td>
+                                                    <a class="btn btn-danger" href="<?php echo base_url('products/delete/'.$item['product_id'])?>">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+                                                    <a class="btn btn-success" href="<?php echo base_url('products/edit/'.$item['product_id'])?>" >
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         <?php endforeach ?>
                                     </tbody>
                                 </table>
-                            </div>
+                                </div>
                         </div>
                     </div>
 

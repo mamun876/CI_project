@@ -50,6 +50,23 @@ class Product extends BaseController
         $session = session();
         $session->setFlashdata("msg", "Product Successfully Added");
          $this->response->redirect('/products');
-       }   
+       };   
+      
     }
+    public function edit($id){
+        $data = $this->products->find($id);
+        // print_r($data);
+        return view('products/edit', $data);
+
+    }
+    public function update($id){
+        
+    }
+    public function delete($id){
+        // $this->products->where('product_id', $id);
+        $this->products->delete($id);
+        // $this->response->redirect('/products');
+        return redirect('products');
+       
+       }
 }
