@@ -49,7 +49,7 @@
         <h2>Add Product</h2>
         <!-- error message -->
         <?= validation_list_errors() ?>
-        <form action="/products/store" method="post">
+        <form action="<?php echo site_url('products/update/'. $product_id) ?>" method="post">
             <div class="form-group">
                 <label for="productName">Product Name:</label>
                 <input type="text" class="form-control" id="productName" name="product" required value="<?= $product ?>">

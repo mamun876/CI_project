@@ -16,3 +16,7 @@
   #crud Example link
 
   https://phpforever.com/codeigniterexample/codeigniter-4-crud-example/#google_vignette
+
+
+  ##Authentication and authorization example crud link:
+  https://www.positronx.io/codeigniter-authentication-login-and-registration-tutorial/

@@ -37,7 +37,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Products:</h6>
             <a class="collapse-item" href="/products">All Products</a>
-            <a class="collapse-item" href="/products/create">Add Products</a>
+            <a class="collapse-item" href="products/create">Add Products</a>
         </div>
     </div>
 </li>

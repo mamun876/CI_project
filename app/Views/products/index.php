@@ -54,7 +54,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6> <span class="float-right"><a class="btn btn-info">New Product</a></span>
                         </div>
                         <div class="card-body">
                             <?php if (session()->getFlashdata("msg")) : ?>
@@ -72,6 +72,7 @@
                                             <th>Price</th>
                                             <th>SKU</th>
                                             <th>Model</th>
+                                            <th>image</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -83,6 +84,7 @@
                                             <th>Price</th>
                                             <th>SKU</th>
                                             <th>Model</th>
+                                            <th>image</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -97,6 +99,7 @@
                                                 <td><?php echo $item['price'] ?></td>
                                                 <td><?php echo $item['sku'] ?></td>
                                                 <td><?php echo $item['model'] ?></td>
+                                                <td><img src="<?php echo site_url('writable/uploads/') . $item['photo']; ?>" alt=""></td>
                                                 <td>
                                                     <a class="btn btn-danger" href="<?php echo base_url('products/delete/'.$item['product_id'])?>">
                                                         <i class="fa fa-trash"></i>

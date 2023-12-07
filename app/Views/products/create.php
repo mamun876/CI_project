@@ -49,7 +49,7 @@
         <h2>Add Product</h2>
         <!-- error message -->
         <?= validation_list_errors() ?>
-        <form action="/products/store" method="post">
+        <form action="/products/store" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="productName">Product Name:</label>
                 <input type="text" class="form-control" id="productName" name="product" required value="<?= set_value('product')?>">
@@ -70,7 +70,15 @@
                 <label for="sku">SKU:</label>
                 <input type="text" class="form-control" id="sku" name="sku" required value="<?= set_value('sku')?>">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <!-- image form -->
+            <div class="form-group" >
+                <label for="image">Select Image:</label>
+                <input type="file" id="image" name="photo" value=" <?= set_value('photo')?>"><br><br>
+            </div>
+      
+    
+            <button type="submit" class="btn btn-primary">add</button>
+            <button type="reset" class="btn btn-secondary">reset</button>
         </form>
     </div>
 
