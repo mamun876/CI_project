@@ -48,6 +48,9 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <?= 
+                    print_r($_SESSION)
+                    ?>
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">

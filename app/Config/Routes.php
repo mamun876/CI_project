@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\CategoryController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -20,4 +21,12 @@ $routes->match(['get','post'],'signup/store', 'SignupController::store');
 $routes->get('signin', 'SigninController::index');
 $routes->post('login', 'SigninController::login');
 $routes->get('signout', 'SigninController::logout');
+
+//categfory routes
+$routes->get('category', 'CategoryController::index'); //category list
+$routes->get('category/create', 'CategoryController::create'); //category entry form
+$routes->post('category/store', 'CategoryController::store'); //category save
+$routes->get('category/edit/(:num)', 'CategoryController::edit/$1'); //category edit form
+$routes->post('category/update/(:num)', 'CategoryController::update/$1'); //category edit 
+$routes->get('category/delete/(:num)', 'CategoryController::delete/$1'); //category delete
 
